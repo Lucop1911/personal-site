@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-w76A8oXRRjBJ3zgKN+g1YjYB26N5pI4jlfF4x5y5zLC3d4zFnkWB9eR8FxHI+Sw" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <body>
+
+    <button class="hamburger">☰</button>
+    <div class="sidebar">
+        <button class="close-hamburger">✕</button>
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+      <div class="container text-center">
+        <h1 class="mb-4">Currency Converter</h1>
+
+        <div class="card mx-auto">
+          <div class="mb-4">
+            <label for="valuta1" class="form-label">From:</label>
+            <select id="valuta1" class="form-select">
+              <option value="AUD">AUD - Australian Dollar</option>
+              <option value="BRL">BRL - Brazilian Real</option>
+              <option value="CAD">CAD - Canadian Dollar</option>
+              <option value="CNY">CNY - Chinese Yuan Renminbi</option>
+              <option value="DKK">DKK - Danish Krone</option>
+              <option value="EUR">EUR - Euro</option>
+              <option value="GBP">GBP - British Pound</option>
+              <option value="HKD">HKD - Hong Kong Dollar</option>
+              <option value="IDR">IDR - Indonesian Rupiah</option>
+              <option value="ILS">ILS - Israeli New Shekel</option>
+              <option value="INR">INR - Indian Rupee</option>
+              <option value="JPY">JPY - Japanese Yen</option>
+              <option value="KRW">KRW - South Korean Won</option>
+              <option value="MXN">MXN - Mexican Peso</option>
+              <option value="MYR">MYR - Malaysian Ringgit</option>
+              <option value="NOK">NOK - Norwegian Krone</option>
+              <option value="NZD">NZD - New Zealand Dollar</option>
+              <option value="PHP">PHP - Philippine Peso</option>
+              <option value="PLN">PLN - Polish Zloty</option>
+              <option value="RUB">RUB - Russian Ruble</option>
+              <option value="SAR">SAR - Saudi Riyal</option>
+              <option value="SEK">SEK - Swedish Krona</option>
+              <option value="SGD">SGD - Singapore Dollar</option>
+              <option value="SZL">SZL - Swazi Emalangeni</option>
+              <option value="THB">THB - Thai Baht</option>
+              <option value="TRY">TRY - Turkish Lira</option>
+              <option value="TWD">TWD - New Taiwan Dollar</option>
+              <option value="USD">USD - US Dollar</option>
+              <option value="VND">VND - Vietnamese Dong</option>
+              <option value="ZAR">ZAR - South African Rand</option>
+              <option value="ZWL">ZWL - Zimbabwean Dollar</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label for="valuta2" id="valuta2_label" class="form-label">To:</label>
+            <select id="valuta2" class="form-select">
+              <option value="AUD">AUD - Australian Dollar</option>
+              <option value="BRL">BRL - Brazilian Real</option>
+              <option value="CAD">CAD - Canadian Dollar</option>
+              <option value="CNY">CNY - Chinese Yuan Renminbi</option>
+              <option value="DKK">DKK - Danish Krone</option>
+              <option value="EUR">EUR - Euro</option>
+              <option value="GBP">GBP - British Pound</option>
+              <option value="HKD">HKD - Hong Kong Dollar</option>
+              <option value="IDR">IDR - Indonesian Rupiah</option>
+              <option value="ILS">ILS - Israeli New Shekel</option>
+              <option value="INR">INR - Indian Rupee</option>
+              <option value="JPY">JPY - Japanese Yen</option>
+              <option value="KRW">KRW - South Korean Won</option>
+              <option value="MXN">MXN - Mexican Peso</option>
+              <option value="MYR">MYR - Malaysian Ringgit</option>
+              <option value="NOK">NOK - Norwegian Krone</option>
+              <option value="NZD">NZD - New Zealand Dollar</option>
+              <option value="PHP">PHP - Philippine Peso</option>
+              <option value="PLN">PLN - Polish Zloty</option>
+              <option value="RUB">RUB - Russian Ruble</option>
+              <option value="SAR">SAR - Saudi Riyal</option>
+              <option value="SEK">SEK - Swedish Krona</option>
+              <option value="SGD">SGD - Singapore Dollar</option>
+              <option value="SZL">SZL - Swazi Emalangeni</option>
+              <option value="THB">THB - Thai Baht</option>
+              <option value="TRY">TRY - Turkish Lira</option>
+              <option value="TWD">TWD - New Taiwan Dollar</option>
+              <option value="USD">USD - US Dollar</option>
+              <option value="VND">VND - Vietnamese Dong</option>
+              <option value="ZAR">ZAR - South African Rand</option>
+              <option value="ZWL">ZWL - Zimbabwean Dollar</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label for="num" class="form-label">Amount:</label>
+            <input type="number" min="0" id="num" class="form-control" placeholder="Enter amount" required>
+          </div>
+
+          <button id="btn_converti" class="btn btn-primary w-100">Convert</button>
+
+          <p id="risultato" class="mt-4"></p>
+          <p id="informazioni" class="mt-4"></p>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-KE6Nptd4l1uCJwguD92KiBC/O1z1ifGxa16fYcftv3hgWcz1jS6bF0ZJD9DzA8zz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
