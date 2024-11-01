@@ -54,7 +54,6 @@ body {
 .sidebar h2 {
     font-size: 1.5em;
     margin-bottom: 20px;
-    margin-top: 30px;
     font-weight: 700;
 }
 
@@ -200,6 +199,10 @@ h1 {
     .container {
         margin-left: 0px;
         margin-right: 0px;
+    }
+
+    .sidebar h2 {
+        margin-top: 30px;
     }
 }
 
