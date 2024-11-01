@@ -53,7 +53,6 @@ body {
 
 .sidebar h2 {
     font-size: 1.5em;
-    margin-top: 30px;
     margin-bottom: 20px;
     font-weight: 700;
 }
@@ -215,5 +214,9 @@ h1 {
 
     .main-content {
         margin-left: 15%;
+    }
+
+    .sidebar h2 {
+        margin-top: 30px;
     }
 }
