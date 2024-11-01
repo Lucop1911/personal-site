@@ -52,8 +52,13 @@ const closeHamburger = document.querySelector('.close-hamburger');
 
 hamburger.addEventListener('click', () => {
     sidebar.classList.toggle('active');
+    document.getElementById('hamburger').disabled = true;
+    document.getElementById('hamburger').style.cursor = 'default';
+    
 });
 
 closeHamburger.addEventListener('click', () => {
     sidebar.classList.remove('active');
+    document.getElementById('hamburger').disabled = false;
+    document.getElementById('hamburger').style.cursor = 'pointer';
 });
