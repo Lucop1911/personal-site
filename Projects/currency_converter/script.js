@@ -41,7 +41,7 @@ document.getElementById('num').addEventListener('keypress', (e) => {
 
 document.getElementById('num').addEventListener('paste', (e) => {
     const pastedText = (e.clipboardData || window.Clipboard).getData("text");
-    if (pastedText.includes("-")) {
+    if (pastedText.includes("-") || pastedText.includes("e") || pastedText.includes("E")) {
         e.preventDefault();
     }
 });
