@@ -127,6 +127,8 @@ h1 {
     border: 1px solid #ced4da;
     font-size: 1.1rem;
     margin-bottom: 9%;
+    width: 60%;
+    min-width: 150px;
 }
 
 .btn-primary {
@@ -175,7 +177,7 @@ h1 {
 }
 
 .label2 {
-    margin-top: -15px;
+    margin-top: -38px;
 }
 
 @media (max-width: 629px) {
@@ -204,14 +206,17 @@ h1 {
 
     .form-select {
         width: 70%; 
+        min-width: 110px;
     }
 
     .form-control {
         width: 80%; 
+        min-width: 120px;
     }
 
     .btn-primary {
-        width: 60%; 
+        width: 60%;
+        min-width: 100px; 
     }
 
     .container {
