@@ -1,3 +1,21 @@
+document.addEventListener('DOMContentLoaded', setDefaultDate);
+
+function setDefaultDate() {
+    const dateInput = document.getElementById('date1');
+    const now = new Date();
+
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+    dateInput.value = formattedDate;
+}
+
 document.getElementById('btn_converti').addEventListener('click', function () {
     const dateInput = document.getElementById('date1').value.trim();
     const numInput = parseInt(document.getElementById('num').value, 10);
