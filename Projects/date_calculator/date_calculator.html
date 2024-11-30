@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date calculator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-w76A8oXRRjBJ3zgKN+g1YjYB26N5pI4jlfF4x5y5zLC3d4zFnkWB9eR8FxHI+Sw" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <button class="hamburger" id="hamburger">☰</button>
+  <div class="sidebar">
+      <button class="close-hamburger">✕</button>
+      <h2><a href="../../index.html">Home</a></h2>
+      <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="../currency_converter/currency_converter.html"></a></li>
+      </ul>
+  </div>
 
-    <button class="hamburger" id="hamburger">☰</button>
-    <div class="sidebar">
-        <button class="close-hamburger">✕</button>
-        <h2><a href="../../index.html">Home</a></h2>
-        <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="../currency_converter/currency_converter.html">Currency converter</a></li>
-        </ul>
-    </div>
-
-    <div class="main-content">
+  <div class="main-content">
     <div class="container text-center">
-        <h1 class="mb-4">Currency Converter</h1>
+      <h1 class="mb-4">Date Calculator</h1>
 
-        <div class="card mx-auto">
-            <div class="mb-4">
-                <label for="date1" class="form-label">Insert the first date (YYYY-MM-DD HH:mm:ss)</label>
-                <input type="text" id="date1" class="form-control" placeholder="YYYY-MM-DD HH:mm:ss">
-              </div>
-              
-
-            <div class="mb-4 d-flex align-items-center">
-                <label for="num" class="form-label me-3">Insert an amount to add/ subtract</label>
-                <input type="number" id="num" class="form-control me-3" placeholder="Enter amount" required>
-                <select id="valuta2" class="form-select">
-                    <option value="y">Years</option>
-                    <option value="m">Months</option>
-                    <option value="g">Days</option>
-                    <option value="h">Hours</option>
-                    <option value="i">Minutes</option>
-                    <option value="s">Seconds</option>
-                </select>                
-            </div>
-    
-            <button id="btn_converti" class="btn btn-primary w-100">Convert</button>
-
-            <p id="risultato" class="mt-4"></p>
-
-            </div>
+      <div class="card mx-auto">
+        <div class="mb-4">
+          <label for="valore1" class="form-label">Insert the first date</label>
+          <input type="text" name="date" id="date1" class="form-control">
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-KE6Nptd4l1uCJwguD92KiBC/O1z1ifGxa16fYcftv3hgWcz1jS6bF0ZJD9DzA8zz" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+        <div class="mb-4 d-flex align-items-center">
+          <label for="num" class="form-label me-3">Insert an amount to add/ subtract</label>
+          <input type="number" id="num" class="form-control me-3" placeholder="Enter amount" required>
+          <select id="valuta2" class="form-select">
+              <option value="y">Years</option>
+              <option value="m">Months</option>
+              <option value="g">Days</option>
+              <option value="h">Hours</option>
+              <option value="i">Minutes</option>
+              <option value="s">Seconds</option>
+          </select>
+        </div>
+      
+        <button id="btn_converti" class="btn btn-primary w-100">Convert</button>
+        <p id="risultato" class="mt-4"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-KE6Nptd4l1uCJwguD92KiBC/O1z1ifGxa16fYcftv3hgWcz1jS6bF0ZJD9DzA8zz" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
 </html>

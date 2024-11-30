@@ -1,23 +1,20 @@
-document.addEventListener('DOMContentLoaded', setDefaultDate);
-
 function setDefaultDate() {
     const dateInput = document.getElementById('date1');
     const now = new Date();
-
     const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, '0');
     const day = String(now.getDate()).padStart(2, '0');
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
-
-    const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-
+    const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
     dateInput.value = formattedDate;
 }
 
+document.addEventListener('DOMContentLoaded', setDefaultDate);
+
 document.getElementById('btn_converti').addEventListener('click', function () {
-    const dateInput = document.getElementById('date1').value.trim();
+    const dateInput = document.getElementById('date1').value;
     const numInput = parseInt(document.getElementById('num').value, 10);
     const unitInput = document.getElementById('valuta2').value;
     const resultElement = document.getElementById('risultato');
@@ -27,37 +24,47 @@ document.getElementById('btn_converti').addEventListener('click', function () {
       return;
     }
 
-    const dateRegex = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/;
-    if (!dateRegex.test(dateInput)) {
-      resultElement.textContent = "La data deve essere nel formato YYYY-MM-DD HH:mm:ss.";
-      return;
-    }
-
-    const [datePart, timePart] = dateInput.split(' ');
-    const [year, month, day] = datePart.split('-').map(Number);
-    const [hour, minute, second] = timePart.split(':').map(Number);
-    const inputDate = new Date(year, month - 1, day, hour, minute, second);
-
+    const [day, month, yearAndTime] = dateInput.split('/');
+    const [year, time] = yearAndTime.split(' ');
+    const [hours, minutes, seconds] = time.split(':');
+    const inputDate = new Date(year, month - 1, day, hours, minutes, seconds);
     let finalDate = new Date(inputDate);
+
     switch (unitInput) {
-      case 'y': finalDate.setFullYear(finalDate.getFullYear() + numInput); break;
-      case 'm': finalDate.setMonth(finalDate.getMonth() + numInput); break;
-      case 'g': finalDate.setDate(finalDate.getDate() + numInput); break;
-      case 'h': finalDate.setHours(finalDate.getHours() + numInput); break;
-      case 'i': finalDate.setMinutes(finalDate.getMinutes() + numInput); break;
-      case 's': finalDate.setSeconds(finalDate.getSeconds() + numInput); break;
+      case 'y':
+        finalDate.setFullYear(finalDate.getFullYear() + numInput);
+        break;
+      case 'm':
+        finalDate.setMonth(finalDate.getMonth() + numInput);
+        break;
+      case 'g':
+        finalDate.setDate(finalDate.getDate() + numInput);
+        break;
+      case 'h':
+        finalDate.setHours(finalDate.getHours() + numInput);
+        break;
+      case 'i':
+        finalDate.setMinutes(finalDate.getMinutes() + numInput);
+        break;
+      case 's':
+        finalDate.setSeconds(finalDate.getSeconds() + numInput);
+        break;
       default:
         resultElement.textContent = "Unità di misura non valida.";
         return;
     }
 
-    const formattedDate = finalDate.toISOString().replace('T', ' ').slice(0, 19);
-    resultElement.textContent = `La data finale è: ${formattedDate}`;
+    const resultDay = String(finalDate.getDate()).padStart(2, '0');
+    const resultMonth = String(finalDate.getMonth() + 1).padStart(2, '0');
+    const resultYear = finalDate.getFullYear();
+    const resultHours = String(finalDate.getHours()).padStart(2, '0');
+    const resultMinutes = String(finalDate.getMinutes()).padStart(2, '0');
+    const resultSeconds = String(finalDate.getSeconds()).padStart(2, '0');
+    resultElement.textContent = `La data finale è: ${resultDay}/${resultMonth}/${resultYear} ${resultHours}:${resultMinutes}:${resultSeconds}`;
 });
 
-
 document.getElementById('num').addEventListener('keypress', (e) => {
-    if (e.key === "e" || e.key === "E") {
+    if (e.key == "e" || e.key == "E") {
         e.preventDefault();
     }
 });
@@ -75,10 +82,12 @@ const closeHamburger = document.querySelector('.close-hamburger');
 
 hamburger.addEventListener('click', () => {
     sidebar.classList.toggle('active');
-    hamburger.disabled = true;
+    document.getElementById('hamburger').disabled = true;
+    document.getElementById('hamburger').style.cursor = 'default';
 });
 
 closeHamburger.addEventListener('click', () => {
     sidebar.classList.remove('active');
-    hamburger.disabled = false;
+    document.getElementById('hamburger').disabled = false;
+    document.getElementById('hamburger').style.cursor = 'pointer';
 });
