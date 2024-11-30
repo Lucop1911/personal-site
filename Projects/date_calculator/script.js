@@ -19,9 +19,25 @@ document.getElementById('btn_converti').addEventListener('click', function () {
     const unitInput = document.getElementById('valuta2').value;
     const resultElement = document.getElementById('risultato');
 
-    if (!dateInput || isNaN(numInput)) {
-      resultElement.textContent = "Inserisci una data valida e un valore numerico.";
-      return;
+    if (!dateInput) {
+        resultElement.textContent = "Please enter a valid date.";
+        return;
+    }
+
+    const datePattern = /^\d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2}$/;
+    if (!datePattern.test(dateInput)) {
+        resultElement.textContent = "The date format is incorrect. Use dd/mm/yyyy hh:mm:ss.";
+        return;
+    }
+
+    if (isNaN(numInput) || numInput === 0) {
+        resultElement.textContent = "Please enter a valid numeric amount.";
+        return;
+    }
+
+    if (!unitInput) {
+        resultElement.textContent = "Please select a unit (Years, Months, Days, Hours, Minutes, Seconds).";
+        return;
     }
 
     const [day, month, yearAndTime] = dateInput.split('/');
@@ -50,7 +66,7 @@ document.getElementById('btn_converti').addEventListener('click', function () {
         finalDate.setSeconds(finalDate.getSeconds() + numInput);
         break;
       default:
-        resultElement.textContent = "Unità di misura non valida.";
+        resultElement.textContent = "Invalid time unit.";
         return;
     }
 
@@ -60,7 +76,7 @@ document.getElementById('btn_converti').addEventListener('click', function () {
     const resultHours = String(finalDate.getHours()).padStart(2, '0');
     const resultMinutes = String(finalDate.getMinutes()).padStart(2, '0');
     const resultSeconds = String(finalDate.getSeconds()).padStart(2, '0');
-    resultElement.textContent = `La data finale è: ${resultDay}/${resultMonth}/${resultYear} ${resultHours}:${resultMinutes}:${resultSeconds}`;
+    resultElement.textContent = `The final date is: ${resultDay}/${resultMonth}/${resultYear} ${resultHours}:${resultMinutes}:${resultSeconds}`;
 });
 
 document.getElementById('num').addEventListener('keypress', (e) => {
