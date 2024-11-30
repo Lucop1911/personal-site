@@ -130,6 +130,7 @@ h1 {
 }
 
 .btn-primary {
+    margin-top: 10px;
     background-color: #007bff;
     border: none;
     border-radius: 8px;
@@ -167,6 +168,12 @@ h1 {
   
 .me-3 {
     margin-right: 1rem;
+}
+
+
+#valuta2 #num {
+    margin-top: 20px;
+    min-width: 90px;
 }
 
 @media (max-width: 629px) {
