@@ -1,15 +1,46 @@
+html, body {
+    height: 100%; 
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f0f2f5;
     color: #333;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
     min-width: 320px;
+}
+
+.testimonials {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    max-width: 600px;
+    width: 100%; /* Ensure it takes the full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+blockquote {
+    font-style: italic;
+    margin: 10px 0;
+}
+
+h1, h2, p {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
 }
 
 h1 {
@@ -30,20 +61,27 @@ h2 {
     color: #34495e;
     font-weight: 400;
     margin-bottom: 15px;
+    margin-top: 20px;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
 }
 
 li {
     margin-bottom: 10px;
+    width: 100%; 
+    text-align: left; 
 }
 
-a {
+.project_link {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 10px 20px;
     margin: 5px;
     color: #fff;
     background-color: #007bff;
@@ -54,26 +92,38 @@ a {
     transition: background-color 0.3s ease;
 }
 
-a:hover {
+.project_link:hover {
     background-color: #1abc9c;
 }
 
-.container {
-    background-color: #fff;
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    max-width: 600px;
-    width: 95%;
-    box-sizing: border-box;
-}
-
 .argomento {
-    margin-bottom: 30px;
+    text-align: left; 
+    width: 100%; 
+    margin: 0; 
+    margin-left: 10px;
+    padding: 0 10px; 
+    font-size: medium;
 }
 
 .argomento h2 {
     margin-top: 50px;
+    margin-left: 5px;
+}
+
+.contact-bar {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0; 
+    position: relative;
+    bottom: 0;
+    width: 100%; 
+    margin-top: auto; 
+    box-sizing: border-box; /
+}
+
+.contact-bar a {
+    color: #1abc9c;
 }
 
 @media (max-width: 768px) {
@@ -104,7 +154,7 @@ a:hover {
         font-size: 1.2em;
     }
 
-    a {
+    .project_link {
         font-size: 1.1em;
     }
 }
