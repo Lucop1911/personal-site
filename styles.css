@@ -1,8 +1,8 @@
 html, body {
     height: 100%; 
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden; 
 }
 
 body {
@@ -29,8 +29,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     max-width: 600px;
-    width: 100%; /* Ensure it takes the full width */
-    box-sizing: border-box; /* Include padding in width calculation */
+    width: 100%;
+    box-sizing: border-box; 
 }
 
 blockquote {
@@ -39,8 +39,8 @@ blockquote {
 }
 
 h1, h2, p {
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default padding */
+    margin: 0; 
+    padding: 0; 
 }
 
 h1 {
