@@ -34,10 +34,22 @@ async function conversion() {
 }
 
 document.getElementById('num').addEventListener('keydown', (e) => {
-    if (isNaN(e.key) && e.key !== '.' && e.key !== ',') {
+    const allowedKeys = [
+        'Backspace',
+        'ArrowLeft',
+        'ArrowRight',
+        'ArrowUp',
+        'ArrowDown',
+        'Enter',
+        'Tab',
+        'Delete',
+    ];
+
+    if (!(!isNaN(e.key) || e.key === '.' || e.key === ',' || allowedKeys.includes(e.key))) {
         e.preventDefault();
     }
 });
+
 
 document.getElementById('num').addEventListener('paste', (e) => {
     const pastedText = (e.clipboardData || window.Clipboard).getData("text");
