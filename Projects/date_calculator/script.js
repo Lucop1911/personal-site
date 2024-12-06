@@ -79,15 +79,15 @@ document.getElementById('btn_converti').addEventListener('click', function () {
     resultElement.textContent = `The final date is: ${resultDay}/${resultMonth}/${resultYear} ${resultHours}:${resultMinutes}:${resultSeconds}`;
 });
 
-document.getElementById('num').addEventListener('keypress', (e) => {
-    if (e.key == "e" || e.key == "E") {
+document.getElementById('num').addEventListener('keydown', (e) => {
+    if (!isNaN(e.key) && e.key !== '.' && e.key !== ',') {
         e.preventDefault();
     }
 });
 
 document.getElementById('num').addEventListener('paste', (e) => {
     const pastedText = (e.clipboardData || window.Clipboard).getData("text");
-    if (pastedText.includes("e") || pastedText.includes("E")) {
+    if (!isNaN(pastedText) && pastedText !== '.' && pastedText !== ',') {
         e.preventDefault();
     }
 });
