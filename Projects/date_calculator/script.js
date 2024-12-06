@@ -80,14 +80,14 @@ document.getElementById('btn_converti').addEventListener('click', function () {
 });
 
 document.getElementById('num').addEventListener('keydown', (e) => {
-    if (isNaN(e.key) && e.key !== '.' && e.key !== ',') {
+    if (isNaN(e.key) && e.key !== '.' && e.key !== ',' && e.key !== '-') {
         e.preventDefault();
     }
 });
 
 document.getElementById('num').addEventListener('paste', (e) => {
     const pastedText = (e.clipboardData || window.Clipboard).getData("text");
-    if (isNaN(pastedText) && pastedText !== '.' && pastedText !== ',') {
+    if (isNaN(pastedText) && pastedText !== '.' && pastedText !== ',' && pastedText !== '-') {
         e.preventDefault();
     }
 });
